@@ -1,0 +1,22 @@
+
+{% load static  %}
+<link rel="stylesheet" href="{% static 'books/book_list.css' %}">
+
+{% if datas is null%}
+<h1>Sorry Could not find the book using Book {{type}} </h1>
+{% else%}
+<ul>
+  {% for data in datas%}
+  <li class="container">
+    <div class="image-container">
+      <img src='{{data.imagelink}}'>
+    </div>
+    <div class="book-container">
+    <h3 id="title">{{data.title}}</h3>
+    <p id="desc">{{data.description}}</p>
+    <a href='{{data.previewlink}}' class="link">Link</a>
+    <div>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

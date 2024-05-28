@@ -1,0 +1,8 @@
+{% extends "base.html" %} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'books/search.css' %}" />
+{% endblock %} {% block content %}
+<form method="POST" class="container">
+  {% csrf_token %} {{form}}
+  <button id="search-button">Search</button>
+</form>
+{% endblock %}
